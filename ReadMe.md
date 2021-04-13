@@ -1,3 +1,3 @@
-Making a python based html editor
+Download and run main.py
 
-It will be a GUI
+Follow on screen instructions
