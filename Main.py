@@ -1,5 +1,4 @@
 from tkinter import *
-import datetime as dt
 # used to close the windows
 def Close_start():
     start.destroy()
@@ -19,7 +18,9 @@ def Write(html):
 def Main_win():
 # sets variables to global so they can be accessed in another function
     global main, title, heading, body, SAVE
+# closes first window
     Close_start()
+# makes editor window
     main = Tk()
     main.title("HTML Creator")
     main.geometry("1000x700")
@@ -81,6 +82,6 @@ def CREATE():
     HTML= "<html>\n<head>\n<title>" + HTML_title + "</title></head>\n<body>\n<h2>" + HTML_head +"</h2>\n<p>"+ HTML_body
     HTML = HTML + "</p></body>\n</html>"
     Write(HTML)
-    SAVE.insert(END, "Saved" + str(dt.time))
+    SAVE.insert(END, "Saved")
     SAVE["state"] = DISABLED
 Main()
