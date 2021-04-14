@@ -1,5 +1,5 @@
 from tkinter import *
-import fileIO
+import datetime as dt
 # used to close the windows
 def Close_start():
     start.destroy()
@@ -18,10 +18,10 @@ def Write(html):
 # Main Editing Window
 def Main_win():
 # sets variables to global so they can be accessed in another function
-    global main, title, heading, body
+    global main, title, heading, body, SAVE
     Close_start()
     main = Tk()
-    main.title("HTML Editor")
+    main.title("HTML Creator")
     main.geometry("1000x700")
     display_text = "HTML Editor"
     T = Text(main, height = 2, width = 15)
@@ -52,7 +52,9 @@ def Main_win():
     body = Text(main, width=30, height=6, font=("Arial", 12))
     body.place(x=150, y=166)
     Exit = Button(main, text = "EXIT", command=Close_main, height=6, width=12,  bg="red", activebackground='gray').place(x=880, y=575)
-    Create = Button(main, text= "CREATE", command=CREATE, height=6, width=30, bg="green", activebackground='gray').place(x=650, y=130)
+    Create = Button(main, text= "CREATE", font=("Arial", 12), command=CREATE, height=6, width=20, bg="green", activebackground='gray').place(x=650, y=130)
+    SAVE = Text(main, height = 2, width = 15)
+    SAVE.place(x=400, y=320)
     main.mainloop()
 def Main():
 # sets start to global so that it can be used by the close functions to destroy it
@@ -79,4 +81,6 @@ def CREATE():
     HTML= "<html>\n<head>\n<title>" + HTML_title + "</title></head>\n<body>\n<h2>" + HTML_head +"</h2>\n<p>"+ HTML_body
     HTML = HTML + "</p></body>\n</html>"
     Write(HTML)
+    SAVE.insert(END, "Saved" + str(dt.time))
+    SAVE["state"] = DISABLED
 Main()
