@@ -1,10 +1,12 @@
 from tkinter import *
+import Main_html
 def Close_start():
     start.destroy()
 def Close_main():
     main.destroy()
+
 def Main_win():
-    global main
+    global main, title, heading, body
     Close_start()
     main = Tk()
     main.title("HTML Editor")
@@ -14,7 +16,7 @@ def Main_win():
     T.insert(END, display_text)
     T["state"] = DISABLED
     T.pack()
-    directions= "Fill boxes then press create to see your webpage."
+    directions= "Fill boxes then press CREATE to see your webpage."
     I = Text(main, height=2)
     I.insert(END, directions)
     I["state"] = DISABLED
@@ -37,8 +39,8 @@ def Main_win():
     BODY.place(x=30, y=160)
     body = Text(main, width=30, height=6, font=("Arial", 12))
     body.place(x=150, y=166)
-    Exit = Button(main, text = "EXIT", command=Close_main, height=6, width=12).place(x=880, y=575)
-    Create = Button(main, text= "CREATE", height=6, width=30).place(x=650, y=130)
+    Exit = Button(main, text = "EXIT", command=Close_main, height=6, width=12,  bg="red", activebackground='gray').place(x=880, y=575)
+    Create = Button(main, text= "CREATE", command=CREATE, height=6, width=30, bg="green", activebackground='gray').place(x=650, y=130)
     main.mainloop()
 def Main():
     global start
@@ -55,4 +57,10 @@ def Main():
     b1.pack()
     b2.pack()
     start.mainloop()
+def CREATE():
+    HTML_title=title.get()
+    HTML_head=heading.get()
+    HTML_body=body.get(1.0, "end-1c")
+    HTML= HTML_title + HTML_head + HTML_body
+    print(HTML)
 Main()
