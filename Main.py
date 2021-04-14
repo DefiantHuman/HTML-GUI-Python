@@ -1,10 +1,18 @@
 from tkinter import *
-import Main_html
+import fileIO
 def Close_start():
     start.destroy()
 def Close_main():
     main.destroy()
-
+def Write(html):
+  # opens index.html in write mode
+  file = open("g:/HTML-GUI/index.html", "w")
+  # clears the file so that we can't add to the file
+  file.truncate(0)
+  # writes a little comment and the html to the file
+  file.write("<!-- Written by Python program--> \r" + html)
+  # closes the file
+  file.close()
 def Main_win():
     global main, title, heading, body
     Close_start()
@@ -61,6 +69,7 @@ def CREATE():
     HTML_title=title.get()
     HTML_head=heading.get()
     HTML_body=body.get(1.0, "end-1c")
-    HTML= HTML_title + HTML_head + HTML_body
-    print(HTML)
+    HTML= "<html> <head><title>" + HTML_title + "</title></head><body><h2>" + HTML_head +"</h2><p>"+ HTML_body
+    HTML = HTML + "</p></body></html>"
+    Write(HTML)
 Main()
