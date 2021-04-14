@@ -1,9 +1,11 @@
 from tkinter import *
 import fileIO
+# used to close the windows
 def Close_start():
     start.destroy()
 def Close_main():
     main.destroy()
+# writes html code to a file
 def Write(html):
   # opens index.html in write mode
   file = open("index.html", "w")
@@ -13,7 +15,9 @@ def Write(html):
   file.write("<!-- Written by Python program--> \r" + html)
   # closes the file
   file.close()
+# Main Editing Window
 def Main_win():
+# sets variables to global so they can be accessed in another function
     global main, title, heading, body
     Close_start()
     main = Tk()
@@ -51,6 +55,7 @@ def Main_win():
     Create = Button(main, text= "CREATE", command=CREATE, height=6, width=30, bg="green", activebackground='gray').place(x=650, y=130)
     main.mainloop()
 def Main():
+# sets start to global so that it can be used by the close functions to destroy it
     global start
     display_text = "Welcome! This is a Python based html editor. \nTo begin press START."
     start = Tk()
@@ -65,6 +70,8 @@ def Main():
     b1.pack()
     b2.pack()
     start.mainloop()
+# called when user hits the create button
+# makes html code then calls a function to write it to a file
 def CREATE():
     HTML_title=title.get()
     HTML_head=heading.get()
