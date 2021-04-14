@@ -1,6 +1,4 @@
-Download and run main.py.  Follow on screen instructions.  Then use editor to make html page. 
-Currently does not save.
-
+Download and edit save for file(line 8). Then run main.py.  Follow on screen instructions.  Then use editor to make html page. 
 
 Features to come
 ----------
