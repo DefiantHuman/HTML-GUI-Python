@@ -6,7 +6,7 @@ def Close_main():
     main.destroy()
 def Write(html):
   # opens index.html in write mode
-  file = open("g:/HTML-GUI/index.html", "w")
+  file = open("index.html", "w")
   # clears the file so that we can't add to the file
   file.truncate(0)
   # writes a little comment and the html to the file
@@ -69,7 +69,7 @@ def CREATE():
     HTML_title=title.get()
     HTML_head=heading.get()
     HTML_body=body.get(1.0, "end-1c")
-    HTML= "<html> <head><title>" + HTML_title + "</title></head><body><h2>" + HTML_head +"</h2><p>"+ HTML_body
-    HTML = HTML + "</p></body></html>"
+    HTML= "<html>\n<head>\n<title>" + HTML_title + "</title></head>\n<body>\n<h2>" + HTML_head +"</h2>\n<p>"+ HTML_body
+    HTML = HTML + "</p></body>\n</html>"
     Write(HTML)
 Main()
