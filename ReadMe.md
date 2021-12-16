@@ -5,7 +5,7 @@ Download and edit save for file(line 8). Then run main.py.  Follow on screen ins
 
 Features to come
 ----------
-It will prompt for a save name.  After it will save as "NAME.html" to its folder.
+
 Ask if you want to open in your browser.
 
 Uses
