@@ -1,7 +1,7 @@
 For latest working version see the "releases" page
 ---
 
-Download and edit save for file(line 8). Then run main.py.  Follow on screen instructions.  Then use editor to make html page. 
+It currently writes to the index.html file in the downloaded folder. Then run main.py.  Follow on screen instructions.  Then use editor to make html page. 
 
 Features to come
 ----------
